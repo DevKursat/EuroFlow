@@ -1,4 +1,5 @@
-127.0.0.1 - - [16/May/2026 21:50:49] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [16/May/2026 21:50:49] "GET /assets/css/style.css HTTP/1.1" 200 -
-127.0.0.1 - - [16/May/2026 21:50:49] "GET /assets/js/main.js HTTP/1.1" 200 -
-127.0.0.1 - - [16/May/2026 21:50:52] "GET /eu.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/May/2026 22:08:10] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/May/2026 22:08:40] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/May/2026 22:08:40] "GET /assets/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [16/May/2026 22:08:40] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/May/2026 22:08:40] "GET /assets/js/i18n.js HTTP/1.1" 200 -

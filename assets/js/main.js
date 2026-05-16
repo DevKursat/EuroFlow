@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             } else {
                 entry.target.classList.add('active');
-                // Optional: Stop observing once revealed
-                // observer.unobserve(entry.target);
             }
         });
     }, revealOptions);
@@ -55,5 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Initial Load Animation Delay
     setTimeout(() => {
         document.body.classList.add('loaded');
+        // Trigger initial reveal check
+        reveals.forEach(reveal => {
+            const rect = reveal.getBoundingClientRect();
+            if(rect.top < window.innerHeight) {
+                 reveal.classList.add('active');
+            }
+        });
     }, 100);
 });

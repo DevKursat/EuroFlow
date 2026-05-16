@@ -15,9 +15,15 @@
         <div class="container nav-content">
             <a href="index.html" class="logo">Kürşat Yılmaz</a>
             <div class="nav-links">
-                <a href="#about">Hakkımda</a>
-                <a href="#letter">Motivasyon Mektubu</a>
-                <a href="eu.html" style="opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.3">ESC Panel</a>
+                <a href="#about" data-i18n="nav.about">Hakkımda</a>
+                <a href="#letter" data-i18n="nav.letter">Motivasyon Mektubu</a>
+                <a href="eu.html" style="opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.3" data-i18n="nav.esc">ESC Panel</a>
+
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -25,32 +31,35 @@
     <header>
         <div class="container">
             <div class="reveal">
-                <h1>Dijital Dünyayı <br>Şekillendiriyorum.</h1>
-                <p class="lead">Ben Kürşat Yılmaz, 1 Ağustos 2005 doğumluyum. Yazılım, Tasarım ve Müzik gibi dijital dünyanın birçok farklı alanında aktif olarak çalışıyor ve üretiyorum. 9 yaşından beri kod yazıyor, hayallerimi gerçeğe dönüştürüyorum.</p>
-                <a href="#letter" class="btn btn-primary">Hikayemi Oku</a>
-                <a href="https://devkursat.github.io" target="_blank" class="btn btn-secondary" style="margin-left: 16px;">Eski Portföy</a>
+                <h1 data-i18n="hero.title">Dijital Dünyayı <br>Şekillendiriyorum.</h1>
+                <p class="lead" data-i18n="hero.desc">Ben Kürşat Yılmaz, 1 Ağustos 2005 doğumluyum. Yazılım, Tasarım ve Müzik gibi dijital dünyanın birçok farklı alanında aktif olarak çalışıyor ve üretiyorum. 9 yaşından beri kod yazıyor, hayallerimi gerçeğe dönüştürüyorum.</p>
+                <div class="action-buttons">
+                    <a href="#letter" class="btn btn-primary" data-i18n="hero.btn.story">Hikayemi Oku</a>
+                    <a href="assets/cv.pdf" download class="btn btn-primary" style="margin-left: 16px; background: linear-gradient(135deg, #32D74B 0%, #0A84FF 100%);" data-i18n="hero.btn.cv">CV İndir (PDF)</a>
+                    <a href="https://devkursat.github.io" target="_blank" class="btn btn-secondary" style="margin-left: 16px;" data-i18n="hero.btn.old">Eski Portföy</a>
+                </div>
             </div>
         </div>
     </header>
 
     <section id="letter" class="container">
-        <h2 class="reveal">Avrupa Gençlik Programı İçin <br>Motivasyonum</h2>
+        <h2 class="reveal" data-i18n="letter.title">Avrupa Gençlik Programı İçin <br>Motivasyonum</h2>
 
         <div class="card glass-panel reveal stagger-1">
             <div class="letter-content">
-                <p>Ben Kürşat Yılmaz, İstanbul'da doğdum ve yaşıyorum. 9 yaşından beri kod yazıyorum, çalışıyorum, kendimi geliştiriyorum. Bu mesleği seçmemdeki en büyük etken insanların ve kendi ihtiyaçlarımı dijitalde karşılayabilmek; yaratıcılık tarafımı gerçeğe dönüştürdüğümü görmek beni hep motive etti ve hala da ediyor.</p>
+                <p data-i18n="letter.p1">Ben Kürşat Yılmaz, İstanbul'da doğdum ve yaşıyorum. 9 yaşından beri kod yazıyorum, çalışıyorum, kendimi geliştiriyorum. Bu mesleği seçmemdeki en büyük etken insanların ve kendi ihtiyaçlarımı dijitalde karşılayabilmek; yaratıcılık tarafımı gerçeğe dönüştürdüğümü görmek beni hep motive etti ve hala da ediyor.</p>
 
-                <p>Bu mesleği seçmemdeki en büyük etken ve benim çocukluk hayalim; bir yere bağlı, asosyal kalmamak ve gezerken farklı kültürleri keşfedip yeni deneyimler, yeni projeler geliştirmek. Ama yaşadığım ülke ve durumundan kaynaklı maddi olarak yeterli olamıyorum ve varlıklı bir aileden gelmediğim için sürekli çalışıyorum ama bir türlü bu hayalimi gerçekleştiremiyorum.</p>
+                <p data-i18n="letter.p2">Bu mesleği seçmemdeki en büyük etken ve benim çocukluk hayalim; bir yere bağlı, asosyal kalmamak ve gezerken farklı kültürleri keşfedip yeni deneyimler, yeni projeler geliştirmek. Ama yaşadığım ülke ve durumundan kaynaklı maddi olarak yeterli olamıyorum ve varlıklı bir aileden gelmediğim için sürekli çalışıyorum ama bir türlü bu hayalimi gerçekleştiremiyorum.</p>
 
-                <p>Avrupa programları aslında tam olarak benim ihtiyacımı gidermek üzerine kurulmuş diyebilirim. Hem sosyalleşip insanlara yardım edebilir, hem gittiğim ülkeyi gezebilir, hem de yazılım yapabilirim. O yüzden aktif hayalim buradan, karşılıklı birbirimize iyi geleceğimiz bir programdan onay almak.</p>
+                <p data-i18n="letter.p3">Avrupa programları aslında tam olarak benim ihtiyacımı gidermek üzerine kurulmuş diyebilirim. Hem sosyalleşip insanlara yardım edebilir, hem gittiğim ülkeyi gezebilir, hem de yazılım yapabilirim. O yüzden aktif hayalim buradan, karşılıklı birbirimize iyi geleceğimiz bir programdan onay almak.</p>
 
                 <div style="margin: 40px 0; padding: 20px; border-left: 4px solid var(--accent-blue); background: rgba(255,255,255,0.02);">
-                    <p style="margin: 0; font-style: italic; color: var(--text-secondary);">Ayrıca boş vakitlerimde kitap okumak, dizi/film izlemeyi ve su kenarında yürümeyi severim. Kendimi geliştirmekten zevk alıyorum.</p>
+                    <p style="margin: 0; font-style: italic; color: var(--text-secondary);" data-i18n="letter.quote">Ayrıca boş vakitlerimde kitap okumak, dizi/film izlemeyi ve su kenarında yürümeyi severim. Kendimi geliştirmekten zevk alıyorum.</p>
                 </div>
 
-                <p>Avcılar Doğa Koleji'nde orta okul eğitimimi aldım, Liseyi de İstanbul'da tamamladım ve sonrasında Ankara Üniversitesi'nde lisans bölümü yazdım ama tamamlamadım, durdurdum. Avrupa'da yardımlaşmak istiyorum.</p>
+                <p data-i18n="letter.p4">Avcılar Doğa Koleji'nde orta okul eğitimimi aldım, Liseyi de İstanbul'da tamamladım ve sonrasında Ankara Üniversitesi'nde lisans bölümü yazdım ama tamamlamadım, durdurdum. Avrupa'da yardımlaşmak istiyorum.</p>
 
-                <p>Proje üretmek zevkli ama dönüp sitede kendi reklamımı yapmak pek benlik değil. Yine de eski projelerime ve geçmişime <a href="https://devkursat.github.io" target="_blank" style="color: var(--accent-blue); text-decoration: none;">devkursat.github.io</a> adresinden göz atabilirsiniz; ancak ben oradakinden çok daha fazlasıyım.</p>
+                <p data-i18n="letter.p5">Proje üretmek zevkli ama dönüp sitede kendi reklamımı yapmak pek benlik değil. Yine de eski projelerime ve geçmişime <a href="https://devkursat.github.io" target="_blank" style="color: var(--accent-blue); text-decoration: none;">devkursat.github.io</a> adresinden göz atabilirsiniz; ancak ben oradakinden çok daha fazlasıyım.</p>
             </div>
         </div>
     </section>
@@ -58,24 +67,25 @@
     <section id="about" class="container">
         <div class="grid-2">
             <div class="card glass-panel reveal stagger-1">
-                <h3 style="margin-bottom: 16px;">Deneyim & Vizyon</h3>
-                <p style="color: var(--text-secondary);">9 yaşından beri süregelen kodlama serüveni. Yazılımın sadece bir iş değil, insanların hayatına dokunan bir sanat formu olduğuna inanıyorum. Avrupa'da becerilerimi sosyal fayda için kullanmak istiyorum.</p>
+                <h3 style="margin-bottom: 16px;" data-i18n="about.exp.title">Deneyim & Vizyon</h3>
+                <p style="color: var(--text-secondary);" data-i18n="about.exp.desc">9 yaşından beri süregelen kodlama serüveni. Yazılımın sadece bir iş değil, insanların hayatına dokunan bir sanat formu olduğuna inanıyorum. Avrupa'da becerilerimi sosyal fayda için kullanmak istiyorum.</p>
             </div>
             <div class="card glass-panel reveal stagger-2">
-                <h3 style="margin-bottom: 16px;">Eğitim</h3>
+                <h3 style="margin-bottom: 16px;" data-i18n="about.edu.title">Eğitim</h3>
                 <ul style="color: var(--text-secondary); list-style-position: inside;">
-                    <li style="margin-bottom: 8px;">Ankara Üniversitesi (Lisans - Donduruldu)</li>
-                    <li style="margin-bottom: 8px;">İstanbul (Lise Eğitimi)</li>
-                    <li>Avcılar Doğa Koleji (Ortaokul Eğitimi)</li>
+                    <li style="margin-bottom: 8px;" data-i18n="about.edu.uni">Ankara Üniversitesi (Lisans - Donduruldu)</li>
+                    <li style="margin-bottom: 8px;" data-i18n="about.edu.hs">İstanbul (Lise Eğitimi)</li>
+                    <li data-i18n="about.edu.ms">Avcılar Doğa Koleji (Ortaokul Eğitimi)</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <footer style="text-align: center; padding: 40px 0; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px;">
-        <p>&copy; 2024 Kürşat Yılmaz. Built with passion for ESC.</p>
+        <p data-i18n="footer.text">&copy; 2024 Kürşat Yılmaz. Built with passion for ESC.</p>
     </footer>
 
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
