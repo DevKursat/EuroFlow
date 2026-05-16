@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESC Dashboard | Kürşat Yılmaz</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2" style="background: rgba(10, 132, 255, 0.1);"></div>
+
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">← Back to Portfolio</a>
+            <div class="nav-links">
+                <span style="color: var(--accent-purple); font-weight: 600;">ESC Operations Center</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container dashboard-grid">
+        <aside class="sidebar reveal">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active">Overview</a></li>
+                <li><a href="#ai-tools">AI Tools</a></li>
+                <li><a href="https://youth.europa.eu/solidarity_en" target="_blank">European Youth Portal ↗</a></li>
+                <li><a href="https://europa.eu/youth/solidarity/projects_en" target="_blank">Find Projects ↗</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="card glass-panel reveal stagger-1" style="margin-bottom: 32px;">
+                <h2 style="margin-bottom: 8px;">Applicant Status</h2>
+                <p class="subtitle">Kürşat Yılmaz - European Solidarity Corps</p>
+
+                <div class="grid-3" style="margin-top: 32px;">
+                    <div class="stat-card">
+                        <span class="stat-value">9</span>
+                        <span class="stat-label">Years Coding</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" style="background: linear-gradient(135deg, #32D74B 0%, #0A84FF 100%); -webkit-background-clip: text;">Ready</span>
+                        <span class="stat-label">Mobility Status</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Motivation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ai-tools" class="card glass-panel reveal stagger-2">
+                <h2>AI Cover Letter Generator</h2>
+                <p class="subtitle">Powered by GPT-4 Contextual Generation</p>
+
+                <div class="ai-generator">
+                    <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;">Target Project Description or Keywords</label>
+                    <textarea class="ai-input" placeholder="e.g., 'Digital skills teaching in Spain for local youth...'" id="aiInput"></textarea>
+
+                    <button class="btn btn-primary" id="generateBtn" style="width: 100%;">
+                        Generate Tailored Cover Letter ✨
+                    </button>
+
+                    <div class="ai-output" id="aiOutput" style="display: none; opacity: 0; transition: opacity 0.5s;">
+                        <p style="color: var(--text-secondary); margin-bottom: 16px;"><em>Generated Draft:</em></p>
+                        <p id="generatedText" style="line-height: 1.8;"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Simple AI Simulator Logic
+        document.getElementById('generateBtn').addEventListener('click', function() {
+            const input = document.getElementById('aiInput').value;
+            const btn = this;
+            const outputDiv = document.getElementById('aiOutput');
+            const outputText = document.getElementById('generatedText');
+
+            btn.innerHTML = 'Generating... <span style="animation: pulse 1s infinite;">⏳</span>';
+            btn.style.opacity = '0.7';
+
+            setTimeout(() => {
+                let contextText = input ? ` Specifically, regarding your project involving "${input}", ` : ' ';
+
+                outputText.innerHTML = `Dear Selection Committee,<br><br>I am Kürşat Yılmaz, a passionate software developer with 9 years of coding experience, applying from Istanbul. ${contextText}I believe my robust background in digital design and development perfectly aligns with your mission.<br><br>My lifelong dream has been to utilize my technical skills for social good while exploring new cultures and escaping the constraints of my current environment. I am eager to contribute to your team, help local communities digitally, and grow both personally and professionally.<br><br>Thank you for considering my application.<br><br>Sincerely,<br>Kürşat Yılmaz`;
+
+                outputDiv.style.display = 'block';
+                setTimeout(() => outputDiv.style.opacity = '1', 50);
+
+                btn.innerHTML = 'Regenerate Draft ✨';
+                btn.style.opacity = '1';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
