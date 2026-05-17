@@ -25,17 +25,33 @@
         </div>
     </nav>
 
-    <div class="container dashboard-grid">
+    <!-- Secure Auth Overlay -->
+    <div id="auth-overlay" class="auth-overlay active">
+        <div class="glass-panel auth-card reveal active">
+            <div class="face-id-icon" style="margin: 0 auto 24px auto; width: 64px; height: 64px; border: 2px solid var(--accent-blue); border-radius: 16px; position: relative;">
+                <div style="position:absolute; top: 16px; left: 16px; width: 6px; height: 6px; background:var(--accent-blue); border-radius:50%;"></div>
+                <div style="position:absolute; top: 16px; right: 16px; width: 6px; height: 6px; background:var(--accent-blue); border-radius:50%;"></div>
+                <div style="position:absolute; bottom: 16px; left: 24px; width: 16px; height: 2px; background:var(--accent-blue); border-radius:4px;"></div>
+            </div>
+            <h3 style="text-align: center; margin-bottom: 8px;">Authentication Required</h3>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 32px; font-size: 0.9rem;">ESC Operations Center is restricted.</p>
+            <button id="auth-btn" class="btn btn-primary btn-glow-blue" style="width: 100%;">Giriş Yap / Authenticate</button>
+        </div>
+    </div>
+
+    <!-- Hidden Dashboard Layout -->
+    <div class="container dashboard-grid" id="main-dashboard" style="opacity: 0; pointer-events: none; transition: opacity 0.8s ease;">
         <aside class="sidebar reveal">
             <ul class="sidebar-nav">
                 <li><a href="#" class="active" data-i18n="eu.side.overview">Overview</a></li>
+                <li><a href="#active-programs">Active Programs</a></li>
                 <li><a href="#ai-tools" data-i18n="eu.side.ai">AI Tools</a></li>
                 <li><a href="https://youth.europa.eu/solidarity_en" target="_blank" data-i18n="eu.side.portal">European Youth Portal ↗</a></li>
-                <li><a href="https://europa.eu/youth/solidarity/projects_en" target="_blank" data-i18n="eu.side.projects">Find Projects ↗</a></li>
             </ul>
         </aside>
 
         <main class="dashboard-content">
+            <!-- Stats -->
             <div class="card glass-panel reveal stagger-1" style="margin-bottom: 32px;">
                 <h2 style="margin-bottom: 8px;" data-i18n="eu.stat.title">Applicant Status</h2>
                 <p class="subtitle" data-i18n="eu.stat.subtitle">Kürşat Yılmaz - European Solidarity Corps</p>
@@ -46,8 +62,18 @@
                         <span class="stat-label" data-i18n="eu.stat.lbl1">Years Coding</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-value" style="background: linear-gradient(135deg, #32D74B 0%, #0A84FF 100%); -webkit-background-clip: text;" data-i18n="eu.stat.val2">Ready</span>
-                        <span class="stat-label" data-i18n="eu.stat.lbl2">Mobility Status</span>
+                        <!-- Simulated Acceptance Probability -->
+                        <div class="prob-circle">
+                            <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                <path class="circle-bg"
+                                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <path class="circle"
+                                  stroke-dasharray="94, 100"
+                                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                <text x="18" y="20.35" class="percentage">94%</text>
+                            </svg>
+                        </div>
+                        <span class="stat-label">Est. Acceptance Rate</span>
                     </div>
                     <div class="stat-card">
                         <span class="stat-value" data-i18n="eu.stat.val3">100%</span>
@@ -56,21 +82,52 @@
                 </div>
             </div>
 
-            <div id="ai-tools" class="card glass-panel reveal stagger-2">
+            <!-- Active Programs -->
+            <div id="active-programs" class="card glass-panel reveal stagger-2" style="margin-bottom: 32px;">
+                <h2>Active Application Programs</h2>
+                <p class="subtitle" style="margin-bottom: 24px;">Click a program to see requirements.</p>
+
+                <div class="program-list">
+                    <div class="program-item active" data-program="tech-spain">
+                        <div style="font-weight: 600; color: var(--text-primary);">Digital Skills for Youth - Spain</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Starts Sep 2024 • 12 Months</div>
+                    </div>
+                    <div class="program-item" data-program="eco-germany">
+                        <div style="font-weight: 600; color: var(--text-primary);">Eco-Tech Sustainability - Germany</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Starts Oct 2024 • 10 Months</div>
+                    </div>
+                </div>
+
+                <div id="program-details" class="program-details" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="margin-bottom: 12px;">Step-by-Step Guide</h4>
+                    <ul class="checklist" style="list-style:none; color: var(--text-secondary);">
+                        <li><span style="color:var(--accent-blue)">✓</span> Update Europass CV</li>
+                        <li><span style="color:var(--accent-blue)">✓</span> Complete Pre-Departure Training</li>
+                        <li><span style="color:rgba(255,255,255,0.2)">○</span> Generate Motivation Letter (Below)</li>
+                        <li><span style="color:rgba(255,255,255,0.2)">○</span> Submit via Portal</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI Tools -->
+            <div id="ai-tools" class="card glass-panel reveal stagger-3">
                 <h2 data-i18n="eu.ai.title">AI Cover Letter Generator</h2>
-                <p class="subtitle" data-i18n="eu.ai.subtitle">Powered by GPT-4 Contextual Generation</p>
+                <p class="subtitle" data-i18n="eu.ai.subtitle">Powered by Gemini AI API</p>
+                <div id="ai-model-badge" style="display:inline-block; margin-bottom:16px; padding: 4px 12px; background: rgba(191, 90, 242, 0.2); border: 1px solid var(--accent-purple); border-radius: 99px; font-size: 0.8rem; color: #e5b3fe;">
+                    Active Model: gemini-1.5-pro
+                </div>
 
                 <div class="ai-generator">
                     <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;" data-i18n="eu.ai.label">Target Project Description or Keywords</label>
                     <textarea class="ai-input" placeholder="e.g., 'Digital skills teaching in Spain for local youth...'" id="aiInput" data-i18n="eu.ai.placeholder"></textarea>
 
-                    <button class="btn btn-primary" id="generateBtn" style="width: 100%;" data-i18n="eu.ai.btn.gen">
+                    <button class="btn btn-primary btn-glow-purple" id="generateBtn" style="width: 100%;" data-i18n="eu.ai.btn.gen">
                         Generate Tailored Cover Letter ✨
                     </button>
 
                     <div class="ai-output" id="aiOutput" style="display: none; opacity: 0; transition: opacity 0.5s;">
                         <p style="color: var(--text-secondary); margin-bottom: 16px;"><em data-i18n="eu.ai.output">Generated Draft:</em></p>
-                        <p id="generatedText" style="line-height: 1.8;"></p>
+                        <div id="generatedText" style="line-height: 1.8; padding: 16px; background: rgba(0,0,0,0.3); border-radius: 12px;"></div>
                     </div>
                 </div>
             </div>
@@ -79,32 +136,36 @@
 
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/ai.js"></script>
     <script>
-        // Simple AI Simulator Logic
-        document.getElementById('generateBtn').addEventListener('click', function() {
-            const input = document.getElementById('aiInput').value;
+        // Auth Logic
+        document.getElementById('auth-btn').addEventListener('click', function() {
             const btn = this;
-            const outputDiv = document.getElementById('aiOutput');
-            const outputText = document.getElementById('generatedText');
-
-            // Get proper translation context
-            const regenText = window.i18n ? window.i18n.get('eu.ai.btn.regen') : 'Regenerate Draft ✨';
-
-            btn.innerHTML = '<span style="animation: pulse 1s infinite;">⏳</span>';
+            btn.innerHTML = 'Authenticating... <span style="animation: pulse 1s infinite;">⏳</span>';
             btn.style.opacity = '0.7';
 
             setTimeout(() => {
-                let contextText = input ? ` Specifically, regarding your project involving "${input}", ` : ' ';
+                const overlay = document.getElementById('auth-overlay');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    const mainDash = document.getElementById('main-dashboard');
+                    mainDash.style.opacity = '1';
+                    mainDash.style.pointerEvents = 'auto';
+                }, 500);
+            }, 1200);
+        });
 
-                // Keep the generated text in english for universal context, or could be adapted via i18n
-                outputText.innerHTML = `Dear Selection Committee,<br><br>I am Kürşat Yılmaz, a passionate software developer with 9 years of coding experience, applying from Istanbul. ${contextText}I believe my robust background in digital design and development perfectly aligns with your mission.<br><br>My lifelong dream has been to utilize my technical skills for social good while exploring new cultures and escaping the constraints of my current environment. I am eager to contribute to your team, help local communities digitally, and grow both personally and professionally.<br><br>Thank you for considering my application.<br><br>Sincerely,<br>Kürşat Yılmaz`;
+        // Program Selection Logic
+        document.querySelectorAll('.program-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.program-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
 
-                outputDiv.style.display = 'block';
-                setTimeout(() => outputDiv.style.opacity = '1', 50);
-
-                btn.innerHTML = regenText;
-                btn.style.opacity = '1';
-            }, 1500);
+                // Add tiny jump animation
+                item.style.transform = 'scale(0.98)';
+                setTimeout(() => item.style.transform = 'scale(1)', 150);
+            });
         });
     </script>
 </body>

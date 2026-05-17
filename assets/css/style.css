@@ -148,6 +148,17 @@ h2 {
   box-shadow: 0 12px 25px rgba(10, 132, 255, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
 }
 
+.btn-glow-purple {
+  background: linear-gradient(135deg, #BF5AF2 0%, #7d12ff 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(191, 90, 242, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.btn-glow-purple:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(191, 90, 242, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
 .btn-glow-green {
   background: linear-gradient(135deg, #32D74B 0%, #249935 100%);
   color: white;
@@ -356,6 +367,96 @@ section {
   min-height: 100vh;
   padding-top: 80px;
 }
+
+/* Modal and Auth Overlays */
+.modal-overlay, .auth-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active, .auth-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content, .auth-card {
+  width: 90%;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 24px;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-content.active, .auth-card.active {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Programs List */
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.program-item {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all var(--spring-fast);
+}
+
+.program-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(8px);
+}
+
+.program-item.active {
+  background: rgba(10, 132, 255, 0.15);
+  border-color: var(--accent-blue);
+}
+
+/* Circular Progress Chart */
+.circular-chart {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1.5s ease-out forwards;
+}
+
+@keyframes progress {
+  0% { stroke-dasharray: 0 100; }
+}
+
+.circular-chart.blue .circle { stroke: var(--accent-blue); }
+.percentage { fill: var(--text-primary); font-family: sans-serif; font-size: 0.5em; text-anchor: middle; font-weight: bold; }
 
 .sidebar {
   padding-right: 24px;

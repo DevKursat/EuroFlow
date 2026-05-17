@@ -17,9 +17,8 @@
             <div class="nav-links">
                 <a href="#about" data-i18n="nav.about">Hakkımda</a>
                 <a href="#letter" data-i18n="nav.letter">Motivasyon Mektubu</a>
-                <a href="eu.html" style="opacity: 0.3; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.3" data-i18n="nav.esc">ESC Panel</a>
 
-                <div class="lang-switcher">
+                <div class="lang-switcher" style="margin-left: 24px;">
                     <button class="lang-btn" data-lang="tr">TR</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="de">DE</button>
@@ -84,6 +83,18 @@
     <footer style="text-align: center; padding: 40px 0; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px;">
         <p data-i18n="footer.text">&copy; 2024 Kürşat Yılmaz. Built with passion for ESC.</p>
     </footer>
+
+    <!-- Secret Gateway Modal -->
+    <div id="secret-modal" class="modal-overlay">
+        <div class="modal-content glass-panel reveal">
+            <h3 style="margin-bottom: 16px;">Sistem Uyarı: Güvenli Alan</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px;">Gizli ESC Operasyon Merkezine girmek üzeresiniz. Devam etmek istiyor musunuz?</p>
+            <div style="display: flex; gap: 16px; justify-content: flex-end;">
+                <button id="secret-no" class="btn btn-secondary btn-glow-white" style="padding: 8px 24px; font-size: 0.95rem;">İptal</button>
+                <button id="secret-yes" class="btn btn-primary btn-glow-blue" style="padding: 8px 24px; font-size: 0.95rem;">Evet, Giriş Yap</button>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
