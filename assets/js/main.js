@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Secret Logo Click (5 clicks to open ESC Panel)
     const logo = document.querySelector('.logo');
-    if(logo && window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+    if(logo && document.getElementById('secret-modal')) {
         let clickCount = 0;
         let clickTimer;
 

@@ -1,7 +1,7 @@
 class AIManager {
     constructor() {
         this.apiKey = localStorage.getItem('geminiApiKey') || '';
-        this.primaryModel = 'gemini-2.0-flash';
+        this.primaryModel = 'gemini-1.5-pro-latest';
         this.fallbackModel = 'gemini-1.5-flash-latest';
         this.currentModel = this.primaryModel;
         this.bindEvents();
