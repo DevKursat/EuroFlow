@@ -89,22 +89,35 @@
 
                 <div class="program-list">
                     <div class="program-item active" data-program="tech-spain">
-                        <div style="font-weight: 600; color: var(--text-primary);">Digital Skills for Youth - Spain</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <div style="font-weight: 600; color: var(--text-primary);">Digital Skills for Youth - Spain</div>
+                            <div style="font-size: 0.8rem; padding: 2px 8px; background: rgba(50, 215, 75, 0.2); color: #32d74b; border-radius: 12px; font-weight: 500;">98% Match</div>
+                        </div>
                         <div style="font-size: 0.85rem; color: var(--text-secondary);">Starts Sep 2024 • 12 Months</div>
                     </div>
                     <div class="program-item" data-program="eco-germany">
-                        <div style="font-weight: 600; color: var(--text-primary);">Eco-Tech Sustainability - Germany</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <div style="font-weight: 600; color: var(--text-primary);">Eco-Tech Sustainability - Germany</div>
+                            <div style="font-size: 0.8rem; padding: 2px 8px; background: rgba(255, 159, 10, 0.2); color: #ff9f0a; border-radius: 12px; font-weight: 500;">85% Match</div>
+                        </div>
                         <div style="font-size: 0.85rem; color: var(--text-secondary);">Starts Oct 2024 • 10 Months</div>
+                    </div>
+                    <div class="program-item" data-program="social-italy">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <div style="font-weight: 600; color: var(--text-primary);">Youth Empowerment & Social Inclusion - Italy</div>
+                            <div style="font-size: 0.8rem; padding: 2px 8px; background: rgba(10, 132, 255, 0.2); color: #0a84ff; border-radius: 12px; font-weight: 500;">92% Match</div>
+                        </div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Starts Jan 2025 • 6 Months</div>
                     </div>
                 </div>
 
                 <div id="program-details" class="program-details" style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
                     <h4 style="margin-bottom: 12px;">Step-by-Step Guide</h4>
-                    <ul class="checklist" style="list-style:none; color: var(--text-secondary);">
-                        <li><span style="color:var(--accent-blue)">✓</span> Update Europass CV</li>
-                        <li><span style="color:var(--accent-blue)">✓</span> Complete Pre-Departure Training</li>
-                        <li><span style="color:rgba(255,255,255,0.2)">○</span> Generate Motivation Letter (Below)</li>
-                        <li><span style="color:rgba(255,255,255,0.2)">○</span> Submit via Portal</li>
+                    <ul class="checklist" style="list-style:none; color: var(--text-secondary); display: flex; flex-direction: column; gap: 12px;">
+                        <li><span style="color:var(--accent-blue); margin-right: 8px;">✓</span> Update Europass CV</li>
+                        <li><span style="color:var(--accent-blue); margin-right: 8px;">✓</span> Complete Pre-Departure Training</li>
+                        <li><span style="color:rgba(255,255,255,0.2); margin-right: 8px;">○</span> Generate Motivation Letter (Below)</li>
+                        <li><span style="color:rgba(255,255,255,0.2); margin-right: 8px;">○</span> Submit via Portal</li>
                     </ul>
                 </div>
             </div>
@@ -114,10 +127,13 @@
                 <h2 data-i18n="eu.ai.title">AI Cover Letter Generator</h2>
                 <p class="subtitle" data-i18n="eu.ai.subtitle">Powered by Gemini AI API</p>
                 <div id="ai-model-badge" style="display:inline-block; margin-bottom:16px; padding: 4px 12px; background: rgba(191, 90, 242, 0.2); border: 1px solid var(--accent-purple); border-radius: 99px; font-size: 0.8rem; color: #e5b3fe;">
-                    Active Model: gemini-1.5-pro
+                    Active Model: gemini-2.0-flash
                 </div>
 
                 <div class="ai-generator">
+                    <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;">Your Gemini API Key (Stored Locally)</label>
+                    <input type="password" id="apiKeyInput" placeholder="Enter API Key (AIzaSy...)" style="width: 100%; padding: 12px; margin-bottom: 16px; border-radius: 12px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: inherit;">
+
                     <label style="color: var(--text-secondary); margin-bottom: 8px; display: block;" data-i18n="eu.ai.label">Target Project Description or Keywords</label>
                     <textarea class="ai-input" placeholder="e.g., 'Digital skills teaching in Spain for local youth...'" id="aiInput" data-i18n="eu.ai.placeholder"></textarea>
 

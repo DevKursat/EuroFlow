@@ -1,10 +1,22 @@
 class AIManager {
     constructor() {
-        this.apiKey = 'AIzaSyD8YgWF_6f0dnyLrAIRlAASfFucByyW5WM';
-        this.primaryModel = 'gemini-1.5-pro-latest';
+        this.apiKey = localStorage.getItem('geminiApiKey') || '';
+        this.primaryModel = 'gemini-2.0-flash';
         this.fallbackModel = 'gemini-1.5-flash-latest';
         this.currentModel = this.primaryModel;
         this.bindEvents();
+        this.initApiKeyInput();
+    }
+
+    initApiKeyInput() {
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        if (apiKeyInput) {
+            apiKeyInput.value = this.apiKey;
+            apiKeyInput.addEventListener('input', (e) => {
+                this.apiKey = e.target.value.trim();
+                localStorage.setItem('geminiApiKey', this.apiKey);
+            });
+        }
     }
 
     updateBadge() {
@@ -20,15 +32,22 @@ class AIManager {
     }
 
     async generateLetter(promptText) {
+        if (!this.apiKey) {
+            throw new Error("API Key is missing. Please enter your Gemini API key.");
+        }
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.currentModel}:generateContent?key=${this.apiKey}`;
 
         const payload = {
             contents: [{
                 parts: [{
-                    text: `You are an expert career counselor. Write a highly professional, heartfelt, and compelling European Solidarity Corps (ESC) Motivation Letter for Kürşat Yılmaz.
-                    He is from Istanbul, 19 years old, has been coding since he was 9.
-                    Target project context from user: "${promptText}".
-                    Keep it to 3-4 paragraphs. Output ONLY the letter text, formatted cleanly in HTML paragraphs (<p>).`
+                    text: `You are an expert, sincere, and human-centric career counselor. Write a highly professional, yet warm and authentic European Solidarity Corps (ESC) Motivation Letter for Kürşat Yılmaz.
+                    He is from Istanbul, born August 1, 2005 (19 years old). He has been coding since he was 9.
+                    His true motivation is to use his digital skills to help people, break out of his shell, travel, and experience new cultures, since financial limitations in his home country have made this difficult.
+                    Target project context: "${promptText}".
+                    Please provide:
+                    1. A sincere, compelling, and non-robotic 3-4 paragraph motivation letter tailored to the project.
+                    2. A step-by-step actionable checklist for Kürşat to improve his chances for this specific project.
+                    Output cleanly in HTML format. Use <h3> for headings, <p> for paragraphs, and <ul>/<li> for the actionable steps. Do NOT use markdown code blocks.`
                 }]
             }],
             generationConfig: {
