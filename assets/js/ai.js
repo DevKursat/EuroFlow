@@ -44,9 +44,13 @@ class AIManager {
                     He is from Istanbul, born August 1, 2005 (19 years old). He has been coding since he was 9.
                     His true motivation is to use his digital skills to help people, break out of his shell, travel, and experience new cultures, since financial limitations in his home country have made this difficult.
                     Please analyze the target project details from this URL: "${promptText}".
-                    Based on the project at that URL, please provide:
-                    1. A sincere, compelling, and non-robotic 3-4 paragraph motivation letter tailored to the project.
-                    2. A step-by-step actionable checklist for Kürşat to improve his chances for this specific project.
+                    Based on the project at that URL, please provide a sincere, compelling, and non-robotic 3-4 paragraph motivation letter tailored to the project.
+
+                    CRITICAL: A good motivation letter MUST explicitly answer these two questions:
+                    1. What will happen when this project is over? What will this project add to Kürşat's life? What will it change?
+                    2. How will Kürşat benefit the host organization running this project? How can he contribute to their activities with his software and design skills?
+
+                    Additionally, provide a step-by-step actionable checklist for Kürşat to improve his chances for this specific project.
                     Output cleanly in HTML format. Use <h3> for headings, <p> for paragraphs, and <ul>/<li> for the actionable steps. Do NOT use markdown code blocks.`
                 }]
             }],
