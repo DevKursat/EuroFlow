@@ -1,7 +1,7 @@
 class AIManager {
     constructor() {
         this.apiKey = localStorage.getItem('geminiApiKey') || '';
-        this.primaryModel = 'gemini-1.5-pro-latest';
+        this.primaryModel = 'gemini-3.1-pro';
         this.fallbackModel = 'gemini-1.5-flash-latest';
         this.currentModel = this.primaryModel;
         this.bindEvents();
@@ -43,8 +43,8 @@ class AIManager {
                     text: `You are an expert, sincere, and human-centric career counselor. Write a highly professional, yet warm and authentic European Solidarity Corps (ESC) Motivation Letter for Kürşat Yılmaz.
                     He is from Istanbul, born August 1, 2005 (19 years old). He has been coding since he was 9.
                     His true motivation is to use his digital skills to help people, break out of his shell, travel, and experience new cultures, since financial limitations in his home country have made this difficult.
-                    Target project context: "${promptText}".
-                    Please provide:
+                    Please analyze the target project details from this URL: "${promptText}".
+                    Based on the project at that URL, please provide:
                     1. A sincere, compelling, and non-robotic 3-4 paragraph motivation letter tailored to the project.
                     2. A step-by-step actionable checklist for Kürşat to improve his chances for this specific project.
                     Output cleanly in HTML format. Use <h3> for headings, <p> for paragraphs, and <ul>/<li> for the actionable steps. Do NOT use markdown code blocks.`

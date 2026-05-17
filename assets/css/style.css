@@ -521,10 +521,18 @@ section {
   color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
-  resize: vertical;
-  min-height: 150px;
   margin-bottom: 20px;
   transition: all 0.3s;
+}
+
+textarea.ai-input {
+  resize: vertical;
+  min-height: 150px;
+}
+
+input.url-input {
+  min-height: auto;
+  padding: 16px 20px;
 }
 
 .ai-input:focus {
